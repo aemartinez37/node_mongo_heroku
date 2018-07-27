@@ -2,6 +2,9 @@ var express = require("express");
 var mongo=require('mongodb');
 var bodyParser = require("body-parser");
 var app=express();
+var cors = require('cors');
+
+app.use(cors());
 
 var MongoClient = mongo.MongoClient;
 var url = "mongodb://aemartinez4:aemartinez4@ds125831.mlab.com:25831/dbtest"; 
@@ -97,4 +100,4 @@ app.delete('/smartphone/eliminar/:cod',function(req,res){
       });
 });
 app.listen(4000);
-console.log("Server started...");
+console.log("Server started on port 4000...");
